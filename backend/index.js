@@ -6,9 +6,10 @@ const app = express()
 
 app.use(cors())
 
-app.get('/', (req, res) => {
-    console.log('Message Sent!')
-    res.send('Hello world!')
+app.get('/random', (req, res) => {
+    const randomNumber = Math.floor((Math.random() * 6) + 1);
+
+    res.json({randomNumber});
 })
 
 const port = 5000
